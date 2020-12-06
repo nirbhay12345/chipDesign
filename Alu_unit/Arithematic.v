@@ -1,12 +1,14 @@
 module Arithematic 
 #(parameter N = 4, M = 4)
 (
+    input wire clk,
     input wire [N-1:0] A, B,
     input wire [M-2:0] instruction,
     output reg [N-1:0] AU_out
 );
     
-    always @ *
+    always @ (posedge clk) begin
+        
         case (instruction)
             3'h0: AU_out = A + B;
             3'h1: AU_out = A - B;
@@ -18,5 +20,6 @@ module Arithematic
             3'h7: AU_out = {A[0], A[N-1:1]};
             default: AU_out = A;
         endcase
+    end
 
 endmodule
