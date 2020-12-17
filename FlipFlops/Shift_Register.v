@@ -4,11 +4,11 @@ module Shift_Register (
     output q
 );
 
-    wire [2:0] q_reg;
+    wire q1, q2, q3;
 
-    D_FF d0(.d(d), .clk(clk), .q(q_reg[0]));
-    D_FF d1(.d(q_reg[0]), .clk(clk), .q(q_reg[1]));
-    D_FF d2(.d(q_reg[1]), .clk(clk), .q(q_reg[2]));
-    D_FF d3(.d(q_reg[2]), .clk(clk), .q(q));
+    D_FF d0(.d(d), .clk(clk), .q(q1));
+    D_FF d1(.d(q1), .clk(clk), .q(q2));
+    D_FF d2(.d(q2), .clk(clk), .q(q3));
+    D_FF d3(.d(q3), .clk(clk), .q(q));
 
 endmodule
