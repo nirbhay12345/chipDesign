@@ -1,4 +1,4 @@
-module Decoder (
+module Decoder ( // 3 to 8 decoder
     input [2:0] din, // input signal
     input enable, // chip enable signal => active low
     output reg [7:0] dout // selected output
